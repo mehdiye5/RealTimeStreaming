@@ -1,0 +1,151 @@
+GET http://localhost:8072/realEstateListing/<tenantId>
+// Returns upto 10 latest results
+Response:
+[
+    "zpid"
+]
+
+POST http://localhost:8072/viewedListing
+
+Json Payload:
+{
+    "tenantId": "tenantId",
+    "zpid": "zpid",
+    "streetAddress": "1234 Address",
+    "zipcode": "98004",
+    "latitude": 10.0,
+    "longitude": 20.0,
+    "garageSpaces": 1,
+    "hasGarage": true,
+    "homeType": "Apartment",
+    "parkingSpaces": 3,
+    "yearBuilt": 2020,
+    "lotSizeSqFt": 40.0,
+    "livingAreaSqFt": 50.0,
+    "numOfBathrooms": 1,
+    "numOfBedrooms": 1,
+    "numOfStories": 1
+}
+
+Response:
+{
+    "tenantId": "tenantId",
+    "zpid": "zpid",
+    "streetAddress": "1234 Address",
+    "zipcode": "98004",
+    "latitude": 10.0,
+    "longitude": 20.0,
+    "garageSpaces": 1,
+    "hasGarage": true,
+    "homeType": "Apartment",
+    "parkingSpaces": 3,
+    "yearBuilt": 2020,
+    "lotSizeSqFt": 40.0,
+    "livingAreaSqFt": 50.0,
+    "numOfBathrooms": 1,
+    "numOfBedrooms": 1,
+    "numOfStories": 1
+}
+
+
+POST http://localhost:8072/realEstateListing/
+
+Json Payload: 
+
+    {
+        "zpid": "zpid",
+        "streetAddress": "1234 Address",
+        "zipcode": "98004",
+        "description": "description",
+        "latitude": 10.0,
+        "longitude": 20.0,
+        "propertyTaxRate": 3.3,
+        "garageSpaces": 1,
+        "hasAssociation": true,
+        "hasCooling": true,
+        "hasGarage": true,
+        "hasSpa": true,
+        "hasView": true,
+        "homeType": "Apartment",
+        "parkingSpaces": 3,
+        "yearBuilt": 2020,
+        "latestPrice": 1000,
+        "numPriceChanges": 1,
+        "latest_saledate": "Jan-16",
+        "latest_salemonth": 5,
+        "latest_saleyear": 2005,
+        "latestPriceSource": "priceSource",
+        "numOfPhotos": 4,
+        "numOfAccessibilityFeatures": 2,
+        "numOfAppliances": 3,
+        "numOfParkingFeatures": 4,
+        "numOfPatioAndPorchFeatures": 4,
+        "numOfSecurityFeatures": 4,
+        "numOfWaterfrontFeatures": 4,
+        "numOfWindowFeatures": 4,
+        "numOfCommunityFeatures": 4,
+        "lotSizeSqFt": 40.0,
+        "livingAreaSqFt": 50.0,
+        "numOfPrimarySchools": 1,
+        "numOfElementarySchools": 1,
+        "numOfMiddleSchools": 1,
+        "numOfHighSchools": 1,
+        "avgSchoolDistance": 1.0,
+        "avgSchoolRating": 1.0,
+        "avgSchoolSize": 1.0,
+        "numOfBathrooms": 1,
+        "numOfBedrooms": 1,
+        "numOfStories": 1,
+        "homeImage": "image.jpg",
+        "medianStudentsPerTeacher": 1.0
+    }
+
+Response:
+
+    {
+        "zpid": "zpid",
+        "streetAddress": "1234 Address",
+        "zipcode": "98004",
+        "description": "description",
+        "latitude": 10.0,
+        "longitude": 20.0,
+        "propertyTaxRate": 3.3,
+        "garageSpaces": 1,
+        "hasAssociation": true,
+        "hasCooling": true,
+        "hasGarage": true,
+        "hasSpa": true,
+        "hasView": true,
+        "homeType": "Apartment",
+        "parkingSpaces": 3,
+        "yearBuilt": 2020,
+        "latestPrice": 1000,
+        "numPriceChanges": 1,
+        "latest_saledate": "Jan-16",
+        "latest_salemonth": 5,
+        "latest_saleyear": 2005,
+        "latestPriceSource": "priceSource",
+        "numOfPhotos": 4,
+        "numOfAccessibilityFeatures": 2,
+        "numOfAppliances": 3,
+        "numOfParkingFeatures": 4,
+        "numOfPatioAndPorchFeatures": 4,
+        "numOfSecurityFeatures": 4,
+        "numOfWaterfrontFeatures": 4,
+        "numOfWindowFeatures": 4,
+        "numOfCommunityFeatures": 4,
+        "lotSizeSqFt": 40.0,
+        "livingAreaSqFt": 50.0,
+        "numOfPrimarySchools": 1,
+        "numOfElementarySchools": 1,
+        "numOfMiddleSchools": 1,
+        "numOfHighSchools": 1,
+        "avgSchoolDistance": 1.0,
+        "avgSchoolRating": 1.0,
+        "avgSchoolSize": 1.0,
+        "numOfBathrooms": 1,
+        "numOfBedrooms": 1,
+        "numOfStories": 1,
+        "homeImage": "image.jpg",
+        "medianStudentsPerTeacher": 1.0
+    }

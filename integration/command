@@ -1,0 +1,22 @@
+export SPARK_HOME=~/Documents/spark-3.1.2-bin-hadoop3.2
+
+load fulltable:
+${SPARK_HOME}/bin/spark-submit --jars iceberg-spark3-runtime-0.12.0.jar load_fulltable.py austinHousingData.csv local.db.fulltable
+
+
+update viewedtable:
+${SPARK_HOME}/bin/spark-submit --jars iceberg-spark3-runtime-0.12.0.jar --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0 updateviewedtable.py localhost:9092 viewed_stream local.db.viewedtable
+
+update fulltable:
+${SPARK_HOME}/bin/spark-submit --jars iceberg-spark3-runtime-0.12.0.jar --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0 updatefulltable.py localhost:9092 full_stream local.db.fulltable
+
+
+get model:
+${SPARK_HOME}/bin/spark-submit --jars iceberg-spark3-runtime-0.12.0.jar --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0 get_model.py 1
+
+return result:
+${SPARK_HOME}/bin/spark-submit --jars iceberg-spark3-runtime-0.12.0.jar --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0 return_result.py localhost:9092 result_topic
+
+
+test model:
+${SPARK_HOME}/bin/spark-submit --jars iceberg-spark3-runtime-0.12.0.jar --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0 generate_perference.py my_model
