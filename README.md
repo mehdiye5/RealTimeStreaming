@@ -1,5 +1,11 @@
 # Real Time Streaming Real Estate Listings
 
+## Project Summary
+
+In this project I designed a cloud service that collects buyer property preference data in real-time, puts it through a data streaming pipeline and feeds it into the compute layer, where data is analyzed in the ML pipeline and property recommendations are adjusted based on new buyer preferences. I
+used spark streaming to receive multiple events from Kafka to process data in near real-time as multiple Avro files and ingest the data in real-time into a table in a data lake. I also built a recommendation engine by using alternating least squares (ALS) ML algorithm on the customer viewing data against the property database to train the model to provide the best suggestions for the user in real-time.
+
+
 Setting up PoC locally
 ========================
 Kafka set up:
@@ -79,13 +85,13 @@ Back end server
 --topic recommendationListing
 
     - Install Intellij and import the project by open project -> Click on Pom.xml
-    - Press Run or Debug to start up the service 
+    - Press Run or Debug to start up the service
         - Starting up the service will create the required DB & Kafka topics
             - (For Info only)
                 - (Not needed if you start service) kafka-topics  --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic house
                 - (Not needed if you start service) kafka-topics  --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic listing
-                - (Not needed if you start service) kafka-topics  --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 
-    
+                - (Not needed if you start service) kafka-topics  --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+
     - Use Postman To make HTTP calls
 
     - Kafka consumer/producer setup
@@ -103,7 +109,3 @@ Shutdown
     - brew services stop kafka
     - brew services stop mysql
     - kafka-topics  --delete --bootstrap-server localhost:9092 --topic recommendationListing etc...
-
-
-
-
