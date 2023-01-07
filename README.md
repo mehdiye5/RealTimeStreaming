@@ -1,6 +1,4 @@
-# RealTimeStreaming
-
-# Real-time-streaming-real-estate-listings
+# Real Time Streaming Real Estate Listings
 
 Setting up PoC locally
 ========================
